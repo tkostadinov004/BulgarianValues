@@ -1,233 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:400,700" rel="stylesheet">
-<link href='style.css' rel='stylesheet' type='text/css'>
-<title>8values Results</title>
-<link rel="icon" type="x-icon" href="icon.png">
-<link rel="shortcut icon" type="x-icon" href="icon.png">
-<meta charset="utf-8">
-<script>
-  version = "Test Edition #1" //Remember to update this before making changes to the test itself!
-</script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:400,700" rel="stylesheet">
+    <link href='style.css' rel='stylesheet' type='text/css'>
+    <title>InfValues Results</title>
+    <link rel="icon" type="x-icon" href="icon.png">
+    <link rel="shortcut icon" type="x-icon" href="icon.png">
+    <meta charset="utf-8">
 </head>
-<script type="application/javascript"
-        src="ideologies.js">
-</script>
-
 <body>
-<h1>8values</h1>
-<hr>
+    <h1>InfValues</h1>
+    <hr>
 
-<h1>Results</h1>
+    <h1>Results</h1>
+    <br>
 
-<h2>Economic Axis: <span class="weight-300" id="economic-label"></span></h2>
-<div class="axis">
-    <img id="img-equality" src="value_images/equality.svg" height="128pt"/>
-    <div class="bar equality" id="bar-equality"><div class="text-wrapper" id="equality"></div></div>
-    <div class="bar wealth" id="bar-wealth"><div class="text-wrapper" id="wealth"></div></div>
-    <img id="img-wealth" src="value_images/markets.svg" height="128pt"/>
-</div>
-<h2>Diplomatic Axis: <span class="weight-300" id="diplomatic-label"></span></h2>
-<div class="axis">
-    <img id="img-might" src="value_images/nation.svg" height="128pt"/>
-    <div class="bar might" id="bar-might"><div class="text-wrapper" id="might"></div></div>
-    <div class="bar peace" id="bar-peace"><div class="text-wrapper" id="peace"></div></div>
-    <img id="img-peace" src="value_images/globe.svg" height="128pt"/>
-</div>
-<h2>Civil Axis: <span class="weight-300" id="state-label"></span></h2>
-<div class="axis">
-    <img id="img-liberty" src="value_images/liberty.svg" height="128pt"/>
-    <div class="bar liberty" id="bar-liberty"><div class="text-wrapper" id="liberty"></div></div>
-    <div class="bar authority" id="bar-authority"><div class="text-wrapper" id="authority"></div></div>
-    <img id="img-authority" src="value_images/authority.svg" height="128pt"/>
-</div>
-<h2>Societal Axis: <span class="weight-300" id="society-label"></span></h2>
-<div class="axis">
-    <img id="img-tradition" src="value_images/tradition.svg" height="128pt"/>
-    <div class="bar tradition" id="bar-tradition"><div class="text-wrapper" id="tradition"></div></div>
-    <div class="bar progress" id="bar-progress"><div class="text-wrapper" id="progress"></div></div>
-    <img id="img-progress" src="value_images/progress.svg" height="128pt"/>
-</div>
-<h2>Closest Match: <span class="weight-300" id="ideology-label"></span></h2>
-<p>Ideological matching is a work in progress, and is much less accurate than the values and axes.</p>
-<p>You can send these results by copying and pasting the URL at the top of the page or using the image below. Think your matched ideology was wrong? Want to help us calibrate the test? Send the results along with your political ideology to us at eightvalues@gmail.com, or send us any comments, questions, or criticism. </p>
-<hr/>
-<img src="" id="banner">
-<button class="button" onclick="location.href='index.html';">Back</button> <br>
-<!-- Website visit statistics - no personal information is collected! -->
-<script type="text/javascript">
-var sc_project=11325211;
-var sc_invisible=1;
-var sc_security="fd9f0659";
-var scJsHost = (("https:" == document.location.protocol) ?
-"https://secure." : "http://www.");
-document.write("<sc"+"ript type='text/javascript' src='" +
-scJsHost+
-"statcounter.com/counter/counter.js'></"+"script>");
-</script>
-<noscript><div class="statcounter"><a title="web stats"
-href="http://statcounter.com/" target="_blank"><img
-class="statcounter"
-src="//c.statcounter.com/11325211/0/fd9f0659/1/" alt="web
-stats"></a></div></noscript>
-<script>
-    function getQueryVariable(variable)
-    {
-           var query = window.location.search.substring(1)
-           var vars = query.split("&")
-           for (var i=0;i<vars.length;i++) {
-                   var pair = vars[i].split("=")
-                   if(pair[0] == variable) {return pair[1]}
-           }
-           return(NaN);
-    }
+    <div class="center-container">
+        <p style="margin:-2px auto">
+            Thanks for taking the test! Here are your results below.
+            There are currently 45 Axes in the test. <b>This test is not completed yet.</b>
+        </p>
+        <br>
 
-    function setBarValue(name, value) {
-        innerel = document.getElementById(name)
-        outerel = document.getElementById("bar-" + name)
-        outerel.style.width = (value + "%")
-        innerel.innerHTML = (value + "%")
-        if (innerel.offsetWidth + 20 > outerel.offsetWidth) {
-            innerel.style.visibility = "hidden"
+
+        <p id="compareCta" style="margin: 0">
+            If you have someone else's link, you can
+            <a href="#" class="toggle-compare-button">click here to compare</a>
+            your results.
+        </p>
+
+        <div id="compareContainer" style="display: none">
+            <p style="margin: 0;">
+                Paste a link below to compare the results. An arrow
+                will indicate how different are the results from the link.
+                <a href="#" class="toggle-compare-button">Disable comparison</a>
+            </p>
+            <input id="compareLinkInput" type="text"
+                style="width: 100%; font-size: 0.9em; padding: 4px; margin: 16px 0 0;"
+                placeholder="Paste a link to compare"
+            />
+        </div>
+        <br>
+    </div>
+
+    <canvas id="canvas" width="956" height="5807" style="border:1px solid #d3d3d3;"></canvas>
+
+    <div class="center-container">
+        <p style="margin:0">
+            If you have any suggestions or opinions about this test, please fill in <a href="https://forms.gle/AA5aYwSb9MnHunMc8">this form</a>.
+        </p>
+        </br>
+    </div>
+
+    <button class="button" onclick="location.href='index.html';" style="background-color: #2196f3;">Back</button>
+    <br>
+
+    <img id="compass" src="compass.png" alt="Image" style="display: none;" />
+
+    <script>
+        // rendering/scaling info
+        const renderConfig = {
+            // center (x-axis 0-point)
+            xCenter: 481,
+
+            // total x-axis width (containing values between scale start and scale end, around xCenter)
+            xWidth: 960, // note: image has last approx 5 pixels cut off on the right hand side
+
+            // 'width' of the scale (from lowest to highest possible value)
+            scaleSpan: 20, // (-10 .. 10)
+
+            // width of the marker box
+            markerWidth: 120,
+
+            // if true, the marker's edge would be touching end of scale at value=scaleMax
+            // if false, the marker would be centered around end of scale at value=scaleMax
+            markerKeepInside: true,
+
+            // two dots will appear instead of a comparison arrow if the difference is
+            // smaller than this value in pixels
+            compareJoinAtPixels: 15,
+
+            compareArrowBackground: {
+                barHeight: 8,
+                circleRadius: 7,
+                arrowHeadHeight: 24,
+                color: 'rgba(0, 0, 0, 0.5)'
+            },
+
+            compareArrowForeground: {
+                barHeight: 4,
+                circleRadius: 5,
+                arrowHeadHeight: 16,
+                color: 'rgba(255, 255, 255, 0.85)'
+            },
+        };
+
+        const urlParams = new URLSearchParams(window.location.search);
+
+        // create definition of rows to be displayed on the image
+        // contains: axis name (corresponding to URL), top y position and height of row
+        const rowList = [
+           // axisName,	y, 		height
+            [ 'cap',	0,		133 ],
+            [ 'auth',	133,	135 ],
+            [ 'nat',	268,	135 ],
+            [ 'trad',	403,	135 ],
+            [ 'acc',	538,	135 ],
+            [ 'relig',	673,	135 ],
+            [ 'rad',	808,	135 ],
+            [ 'nonv',	943,	135 ],
+            [ 'noo',	1078,	135 ],
+            [ 'const',	1213,	135 ],
+            [ 'inter',	1348,	135 ],
+            [ 'assi',	1478,	137 ],
+            [ 'prag',	1615,	138 ],
+            [ 'prud',	1753,	135 ],
+            [ 'free',	1888,	135 ],
+            [ 'pat',	2023,	134 ],
+            [ 'unru',	2157,	134 ],
+            [ 'imp',	2291,	134 ],
+            [ 'dec',	2425,	134 ],
+            [ 'nih',	2559,	135 ],
+            [ 'contra',	2694,	135 ],
+            [ 'gadsen',	2829,	135 ],
+            [ 'puni',	2964,	137 ],
+            [ 'spir',	3101,	133 ],
+            [ 'lcen',	3234,	135 ],
+            [ 'pron',	3369,	135 ],
+            [ 'incom',	3504,	135 ],
+            [ 'clim',	3639,	135 ],
+            [ 'hors',	3774,	135 ],
+            [ 'ptax',	3909,	135 ],
+            [ 'pmart',	4044,	134 ],
+            [ 'consq',	4178,	134 ],
+            [ 'enth',	4311,	131 ],
+            [ 'ahs',	4442,	134 ],
+            [ 'fact',	4576,	134 ],
+            [ 'trpop',	4710,	138 ],
+            [ 'wmar',	4848,	135 ],
+            [ 'trade',	4983,	135 ],
+            [ 'cmind',	5117,	135 ],
+            [ 'poach',	5252,	135 ],
+            [ 'hier',	5387,	130 ],
+            [ 'open',	5517,	142 ],
+            [ 'semir',	5660,	146 ],
+
+            /*
+            // todo: add more boxes when questions are added
+            ...
+            */
+        ] // transform the list into objects containing:
+          // axisName, y, height (from above), value (from URL)
+        .map(entry => {
+            const axisName = entry[0];
+            const urlValue = urlParams.get(axisName);
+            return {
+                axisName: axisName,
+                value: urlValue ? parseFloat(urlValue) : null,
+                y: entry[1],
+                height: entry[2]
+            };
+        });
+
+        function xCenteredRect(ctx, xCenter, y, width, height) {
+            ctx.rect(xCenter - width/2, y, width, height);
         }
-    }
 
-    econArray = ["Communist","Socialist","Social","Centrist","Market","Capitalist","Laissez-Faire"]
-    diplArray = ["Cosmopolitan","Internationalist","Peaceful","Balanced","Patriotic","Nationalist","Chauvinist"]
-    govtArray = ["Anarchist","Libertarian","Liberal","Moderate","Statist","Authoritarian","Totalitarian"]
-    sctyArray = ["Revolutionary","Very Progressive","Progressive","Neutral","Traditional","Very Traditional","Reactionary"]
+        function drawRowHighlights(ctx, rowList, config) {
+            const xSpan = config.markerKeepInside
+                ? (config.xWidth - config.markerWidth)
+                : config.xWidth;
 
-    function setLabel(val,ary) {
-        if (val > 100) { return "" } else
-        if (val > 90) { return ary[0] } else
-        if (val > 75) { return ary[1] } else
-        if (val > 60) { return ary[2] } else
-        if (val >= 40) { return ary[3] } else
-        if (val >= 25) { return ary[4] } else
-        if (val >= 10) { return ary[5] } else
-        if (val >= 0) { return ary[6] } else
-        	{return ""}
-    }
+            const scaleToPixelsRatio = xSpan / config.scaleSpan;
 
-    equality  = getQueryVariable("e")
-    peace     = getQueryVariable("d")
-    liberty   = getQueryVariable("g")
-    progress  = getQueryVariable("s")
-    wealth    = (100 - equality).toFixed(1)
-    might     = (100 - peace   ).toFixed(1)
-    authority = (100 - liberty ).toFixed(1)
-    tradition = (100 - progress).toFixed(1)
+            const rectWidth = config.markerWidth;
 
-    setBarValue("equality", equality)
-    setBarValue("wealth", wealth)
-    setBarValue("peace", peace)
-    setBarValue("might", might)
-    setBarValue("liberty", liberty)
-    setBarValue("authority", authority)
-    setBarValue("progress", progress)
-    setBarValue("tradition", tradition)
+            ctx.fillStyle = "rgba(225, 225, 225, 0.55)";
 
-    document.getElementById("economic-label").innerHTML = setLabel(equality, econArray)
-    document.getElementById("diplomatic-label").innerHTML = setLabel(peace, diplArray)
-    document.getElementById("state-label").innerHTML = setLabel(liberty, govtArray)
-    document.getElementById("society-label").innerHTML = setLabel(progress, sctyArray)
-
-    ideology = ""
-    ideodist = Infinity
-    for (var i = 0; i < ideologies.length; i++) {
-        dist = 0
-        dist += Math.pow(Math.abs(ideologies[i].stats.econ - equality), 2)
-        dist += Math.pow(Math.abs(ideologies[i].stats.govt - liberty), 2)
-        dist += Math.pow(Math.abs(ideologies[i].stats.dipl - peace), 1.73856063)
-        dist += Math.pow(Math.abs(ideologies[i].stats.scty - progress), 1.73856063)
-        if (dist < ideodist) {
-            ideology = ideologies[i].name
-            ideodist = dist
+            rowList
+                .filter(row => row.value !== null)
+                .forEach(row => {
+                    const x = config.xCenter + scaleToPixelsRatio * row.value;
+                    ctx.beginPath();
+                        xCenteredRect(ctx, x, row.y, rectWidth, row.height);
+                    ctx.fill();
+                });
         }
-    }
-    document.getElementById("ideology-label").innerHTML = ideology
 
-    function createImage(src, x, y, w, h) {
-        img = new Image ()
-        img.src = src
-        img.onLoad = function() {
-            ctx.drawImage(img, x, y, w, h)
+        function drawCompareArrow(ctx, x_my, x_theirs, y, config, joinAt) {
+            const arrowSize = config.arrowHeadHeight / 2;
+            const my_left = x_my < x_theirs;
+            const x1 = my_left ? x_my : x_theirs;
+            const x2 = my_left ? x_theirs : x_my
+            const headOffsetSize = arrowSize / 2;
+            const headOffset = my_left ? headOffsetSize : -headOffsetSize;
+            ctx.fillStyle = config.color;
+            ctx.beginPath();
+                if(x2 - x1 > joinAt) {
+                    xCenteredRect(ctx, (x1+x2-headOffset)/2, y - Math.round(config.barHeight/2), x2 - x1 - headOffsetSize, config.barHeight);
+                    ctx.moveTo(x_theirs - headOffset, y + arrowSize);
+                    ctx.lineTo(x_theirs + headOffset * 1.5, y);
+                    ctx.lineTo(x_theirs - headOffset, y - arrowSize);
+                    ctx.moveTo(x_my, y);
+                }else{
+                    ctx.arc(x_theirs, y, config.circleRadius * 0.75, 0, Math.PI * 2)
+                }
+                ctx.arc(x_my, y, config.circleRadius, 0, Math.PI * 2)
+            ctx.fill();
         }
-    }
 
-    window.onload = function() {
-        var c = document.createElement("canvas")
-        var ctx = c.getContext("2d")
-        c.width = 800;
-        c.height = 650;
-        ctx.fillStyle = "#EEEEEE"
-        ctx.fillRect(0,0,800,650);
+        function drawRowCompare(ctx, rowList, comparedValues, config) {
+            const xSpan = config.markerKeepInside
+                ? (config.xWidth - config.markerWidth)
+                : config.xWidth;
 
-        img = document.getElementById("img-equality")
-        ctx.drawImage(img, 20, 170, 100, 100);
-        img = document.getElementById("img-wealth")
-        ctx.drawImage(img, 680, 170, 100, 100)
-        img = document.getElementById("img-might")
-        ctx.drawImage(img, 20, 290, 100, 100)
-        img = document.getElementById("img-peace")
-        ctx.drawImage(img, 680, 290, 100, 100)
-        img = document.getElementById("img-liberty")
-        ctx.drawImage(img, 20, 410, 100, 100)
-        img = document.getElementById("img-authority")
-        ctx.drawImage(img, 680, 410, 100, 100)
-        img = document.getElementById("img-tradition")
-        ctx.drawImage(img, 20, 530, 100, 100)
-        img = document.getElementById("img-progress")
-        ctx.drawImage(img, 680, 530, 100, 100)
+            const scaleToPixelsRatio = xSpan / config.scaleSpan;
 
-        ctx.fillStyle="#222222"
-        ctx.fillRect(120, 180, 560, 80)
-        ctx.fillRect(120, 300, 560, 80)
-        ctx.fillRect(120, 420, 560, 80)
-        ctx.fillRect(120, 540, 560, 80)
-        ctx.fillStyle="#f44336"
-        ctx.fillRect(120, 184, 5.6*equality-2, 72)
-        ctx.fillStyle="#00897b"
-        ctx.fillRect(682-5.6*wealth, 184, 5.6*wealth-2, 72)
-        ctx.fillStyle="#ff9800"
-        ctx.fillRect(120, 304, 5.6*might-2, 72)
-        ctx.fillStyle="#03a9f4"
-        ctx.fillRect(682-5.6*peace, 304, 5.6*peace-2, 72)
-        ctx.fillStyle="#ffeb3b"
-        ctx.fillRect(120, 424, 5.6*liberty-2, 72)
-        ctx.fillStyle="#3f51b5"
-        ctx.fillRect(682-5.6*authority, 424, 5.6*authority-2, 72)
-        ctx.fillStyle="#8bc34a"
-        ctx.fillRect(120, 544, 5.6*tradition-2, 72)
-        ctx.fillStyle="#9c27b0"
-        ctx.fillRect(682-5.6*progress, 544, 5.6*progress-2, 72)
-        ctx.fillStyle="#222222"
-        ctx.font="700 80px Montserrat"
-        ctx.textAlign="left"
-        ctx.fillText("8values", 20, 90)
-        ctx.font="50px Montserrat"
-        ctx.fillText(ideology, 20, 140)
 
-        ctx.textAlign="left"
-        if (equality  > 30) {ctx.fillText(equality + "%", 130, 237.5)}
-        if (might     > 30) {ctx.fillText(might + "%", 130, 357.5)}
-        if (liberty   > 30) {ctx.fillText(liberty + "%", 130, 477.5)}
-        if (tradition > 30) {ctx.fillText(tradition + "%", 130, 597.5)}
-        ctx.textAlign="right"
-        if (wealth    > 30) {ctx.fillText(wealth + "%", 670, 237.5)}
-        if (peace     > 30) {ctx.fillText(peace + "%", 670, 357.5)}
-        if (authority > 30) {ctx.fillText(authority + "%", 670, 477.5)}
-        if (progress  > 30) {ctx.fillText(progress + "%", 670, 597.5)}
+            rowList
+                .filter(row => row.axisName in comparedValues)
+                .forEach(row => {
+                    const x_theirs = config.xCenter + scaleToPixelsRatio * comparedValues[row.axisName];
+                    const x_my = row.value !== null
+                        ? config.xCenter + scaleToPixelsRatio * row.value
+                        : x_theirs;
 
-        ctx.font="300 30px Montserrat"
-        ctx.fillText("8values.github.io", 780, 60)
-		ctx.fillText(version, 780, 90)
-        ctx.textAlign="center"
-        ctx.fillText("Economic Axis: " + document.getElementById("economic-label").innerHTML, 400, 175)
-        ctx.fillText("Diplomatic Axis: " + document.getElementById("diplomatic-label").innerHTML, 400, 295)
-        ctx.fillText("Civil Axis: " + document.getElementById("state-label").innerHTML, 400, 415)
-        ctx.fillText("Societal Axis: " + document.getElementById("society-label").innerHTML, 400, 535)
+                    const y = Math.round(row.y + row.height * 0.7);
+                    drawCompareArrow(ctx, x_my, x_theirs, y, config.compareArrowBackground, config.compareJoinAtPixels);
+                    drawCompareArrow(ctx, x_my, x_theirs, y, config.compareArrowForeground, config.compareJoinAtPixels);
+                });
+        }
 
-        document.getElementById("banner").src = c.toDataURL();
-    }
+
+        window.onload = function() {
+            const img = document.getElementById("compass");
+            const c = document.getElementById("canvas");
+            const ctx = canvas.getContext("2d");
+            let compareEnabled = false;
+            let comparedValues = null;
+            let compareTextValue = null;
+
+            function redraw() {
+                ctx.drawImage(img, 0, 0);
+
+                drawRowHighlights(ctx, rowList, renderConfig);
+
+                if(compareEnabled && comparedValues) {
+                    drawRowCompare(ctx, rowList, comparedValues, renderConfig);
+                }
+            }
+
+            redraw();
+
+            const toggleCompareButtons = document.getElementsByClassName('toggle-compare-button');
+            const compareCta = document.getElementById('compareCta');
+            const compareContainer = document.getElementById('compareContainer');
+            const compareInput = document.getElementById('compareLinkInput');
+
+
+            function onCompareChanged() {
+                if(compareEnabled) {
+                    compareCta.style.display = 'none';
+                    compareContainer.style.display = 'block';
+                }else{
+                    compareCta.style.display = 'block';
+                    compareContainer.style.display = 'none';
+                }
+                try {
+                    const params = compareTextValue.replace(/^.*\?/, '');
+                    const urlParams = new URLSearchParams(params);
+                    const entries = rowList.map(el => [
+                            el.axisName,
+                            urlParams.get(el.axisName)
+                        ])
+                        .filter(el => el[1] !== null)
+                        .map(el => [el[0], parseFloat(el[1])]);
+                    comparedValues = entries.length ? Object.fromEntries(entries) : null;
+                }catch(err) {
+                    comparedValues = null;
+                }
+
+                redraw();
+            }
+
+            function onCompareValueChanged() {
+                const inputValue = compareInput.value || '';
+                if(compareTextValue !== inputValue) {
+                    compareTextValue = inputValue;
+                    onCompareChanged();
+                }
+            }
+
+            compareInput.addEventListener('change', onCompareValueChanged);
+            compareInput.addEventListener('keydown', () => setTimeout(onCompareValueChanged, 10));
+            compareInput.addEventListener('paste', () => setTimeout(onCompareValueChanged, 10));
+
+            for(let i = 0; i < toggleCompareButtons.length; i++) {
+                const button = toggleCompareButtons[i];
+                button.addEventListener('click', (ev) => {
+                    compareEnabled = !compareEnabled;
+                    onCompareChanged();
+                    ev.preventDefault();
+                });
+            }
+        }
     </script>
 </body>
+</html>
