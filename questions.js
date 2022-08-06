@@ -1,421 +1,375 @@
 questions = [
     {
         "id": 0,
-        "question": "Corporations should be a dominant ruling force.",
+        "question": "Капитализмът е най-успешната икономическа система досега.",
         "effects": {
-            "cap": 2
+            "economy": 1
         }
     },
     {
         "id": 1,
-        "question": "Inheritance is a legitimate form of wealth.",
+        "question": "Наследството е легитимна форма на богатство.",
         "effects": {
-            "cap": 1
+            "economy": 1
         }
     },
     {
-        "id": 2,
-        "question": "Capitalism is the most successful and beneficial economic system yet.",
+        "id": 169,
+        "question": "The more layers of irony, the better.",
         "effects": {
-            "cap": 1
+            "semir": -1
         }
     },
     {
         "id": 3,
-        "question": "The means of production should belong to the workers.",
+        "question": "Средствата за производство трябва да принадлежат на работниците.",
         "effects": {
-            "cap": -1
+            "economy": -1
         }
     },
     {
         "id": 4,
-        "question": "Basic utilities like roads and electricity should be publicly owned.",
+        "question": "Трябва да съществува основна инфраструкура като пътища, здравеопазване и образование, която да бъде държавна собственост.",
         "effects": {
-            "cap": -1,
-            "ptax": 1
+            "economy": -1,
+            "taxation": 1
         }
     },
     {
         "id": 5,
-        "question": "A community should suffer the gains and loss toghether.",
+        "question": "Обществото трябва да преживява трудностите заедно.",
         "effects": {
-            "cap": -1
+            "economy": -1
         }
     },
     {
         "id": 6,
-        "question": "A strong and large government is the best for society.",
+        "question": "Едно силно и голямо правителство винаги е полезно за народа",
         "effects": {
             "auth": 1
         }
     },
     {
         "id": 7,
-        "question": "Even when protesting an authoritarian government, violence cannot be accepted.",
+        "question": "Насилието от страна на протестиращите не е приемливо, дори и когато се правят протести против авторитарни режими",
         "effects": {
             "auth": 1
         }
     },
     {
         "id": 8,
-        "question": "Law and Order is more important than freedom and liberty.",
+        "question": "Законът и редът са по-важни от свободата",
         "effects": {
             "auth": 1
-        }
-    },
-    {
-        "id": 9,
-        "question": "If a state exists, its size should be minimized.",
-        "effects": {
-            "auth": -1
-        }
-    },
-    {
-        "id": 10,
-        "question": "The government should stay out of people's daily lives.",
-        "effects": {
-            "auth": -1
         }
     },
     {
         "id": 11,
-        "question": "The existence of the state itself is a threat to our liberty.",
+        "question": "Съществуването на държавата е заплаха за човешката свобода",
         "effects": {
             "auth": -1
         }
     },
     {
         "id": 12,
-        "question": "Autocracy is better than Liberal Democracy.",
+        "question": "Автокрацията е по-добра от либералната демокрация",
         "effects": {
             "auth": 1
         }
     },
     {
-        "id": 12,
-        "question": "It's important to prioritize our nation's interests over the rest of the world.",
+        "id": 13,
+        "question": "Бих имал против лидер, който управлява в полза на хората, но използва авторитарни методи, за да се задържи на власт",
+        "effects": {
+            "auth": -1
+        }
+    },
+    {
+        "id": 14,
+        "question": "Важно е да гледаме българския национален интерес пред този на другите държави",
         "effects": {
             "nat": 1
         }
     },
     {
         "id": 13,
-        "question": "My nation is great.",
+        "question": "България е велика страна",
         "effects": {
             "nat": 1
         }
     },
     {
         "id": 14,
-        "question": "Wars do not need to be justified towards other countries.",
+        "question": "Подкрепям сливането на България и Северна Македония",
         "effects": {
-            "nat": 1
+            "nat": 1,
+            "inter": 1
         }
     },
     {
         "id": 15,
-        "question": "Nationalism is a selfish and evil ideology.",
+        "question": "Национализмът е егоистична и зла идеология.",
         "effects": {
             "nat": -1
         }
     },
     {
         "id": 16,
-        "question": "We should try to avoid wars and conflicts as much as possible.",
+        "question": "Беше грешка да налагаме санкции на Русия и да изпращаме оръжие на Украйна",
         "effects": {
-            "nat": -1
+            "nat": 1,
+            "nonv": 1,
+            "inter": -1
         }
     },
     {
         "id": 17,
-        "question": "A global country will be great for humanity.",
+        "question": "Не подкрепям членството на България в ЕС",
+        "effects": {
+            "nat": 1,
+        }
+    },
+    {
+        "id": 17,
+        "question": "Не подкрепям членството на България в НАТО",
+        "effects": {
+            "nat": 1,
+        }
+    },
+    {
+        "id": 17,
+        "question": "Едно световно правителство би било полезно за хората",
         "effects": {
             "nat": -1
         }
     },
     {
         "id": 18,
-        "question": "Maintaining culture is very important.",
+        "question": "Запазването на нашата култура е изключително важно.",
         "effects": {
             "trad": 1
         }
     },
     {
         "id": 19,
-        "question": "We should maintain traditional values as much as possible.",
-        "effects": {
-            "trad": 1
-        }
-    },
-    {
-        "id": 20,
-        "question": "We should not chase progress.",
+        "question": "Трябва да запазим своите традиционни ценности колкото се може повече",
         "effects": {
             "trad": 1
         }
     },
     {
         "id": 21,
-        "question": "Society should be changed or reformed.",
+        "question": "Обществото трябва да се промени или реформира",
         "effects": {
             "trad": -1
         }
     },
     {
         "id": 22,
-        "question": "I support the LGBT community.",
+        "question": "Подкрепям ЛГБТ обществото",
         "effects": {
             "trad": -1
         }
     },
     {
         "id": 23,
-        "question": "Progression is vital to human society.",
+        "question": "Прогресът е от изключителна важност за хората",
         "effects": {
             "trad": -1
         }
     },
     {
         "id": 24,
-        "question": "The progression of technology has mostly been beneficial.",
+        "question": "Развитието на технологиите е основно в добра посока",
         "effects": {
             "acc": 1
         }
     },
     {
         "id": 25,
-        "question": "Developing advanced technology is the best way to solve climate change.",
+        "question": "Най-добрият начин за справяне с климатичните промени е чрез създаване на нови технологии",
         "effects": {
             "acc": 1
         }
     },
     {
         "id": 26,
-        "question": "Life is harder and generally worse than it is a few decades ago.",
+        "question": "Животът е по-труден и гаден, отколкото е бил преди няколко десетилетия",
         "effects": {
             "acc": -1
         }
     },
     {
         "id": 27,
-        "question": "Technological development should be slowed down.",
-        "effects": {
-            "acc": -1
-        }
-    },
-    {
-        "id": 28,
-        "question": "Letting technology develop too much is very dangerous.",
+        "question": "Трябва да забавим своето технологично развитие",
         "effects": {
             "acc": -1
         }
     },
     {
         "id": 29,
-        "question": "A God or a higher being exists.",
+        "question": "Бог съществува",
         "effects": {
-            "relig": 1
+            "religion": 1
         }
     },
     {
         "id": 30,
-        "question": "My religion should be spread as much as possible.",
+        "question": "Трябва да разпространим своята религия възможно най-много",
         "effects": {
-            "relig": 1
+            "religion": 1
         }
     },
     {
         "id": 31,
-        "question": "I consider myself religious.",
+        "question": "Смятам се за религиозен/религиозна",
         "effects": {
-            "relig": 1
+            "religion": 1
         }
     },
     {
         "id": 32,
-        "question": "A religious government should be put in place.",
+        "question": "Трябва да създадем религиозно правителство (теокрация)",
         "effects": {
-            "relig": 1
+            "religion": 1
         }
     },
     {
         "id": 33,
         "question": "Churches or other religious organization should be taxed as much as other organizations are.",
         "effects": {
-            "relig": -1
+            "religion": -1
         }
     },
     {
-        "id": 34,
-        "question": "My political ideas are fundementally different from the status quo.",
+        "id": 33,
+        "question": "Проблем е, че голяма част от хората в Светия Синод са свързани с Държавна сигурност",
         "effects": {
-            "rad": 1
-        }
-    },
-    {
-        "id": 35,
-        "question": "A certain amount of violence is required in order to establish my ideology.",
-        "effects": {
-            "rad": 1
-        }
-    },
-    {
-        "id": 36,
-        "question": "My ideology is 'mainstream'.",
-        "effects": {
-            "rad": -1
-        }
-    },
-    {
-        "id": 37,
-        "question": "My political ideas can be established through small reforms.",
-        "effects": {
-            "rad": -1
+            "trad": -1
         }
     },
     {
         "id": 38,
-        "question": "Protests should be as peaceful as possible.",
+        "question": "Протестите трябва да бъдат възможно най-мирни",
         "effects": {
             "nonv": 1
         }
     },
     {
         "id": 39,
-        "question": "Agression brings more negatives than positive.",
+        "question": "Агресията носи повече негативи, отколкото позитиви",
         "effects": {
             "nonv": 1
         }
     },
     {
         "id": 40,
-        "question": "Violence is sometimes unavoidable in order to acheive real change.",
+        "question": "Насилието понякога е неизбежно, особено ако искаме да направим истински реформи",
         "effects": {
             "nonv": -1
         }
     },
     {
         "id": 41,
-        "question": "Experts and intellegent people should rule this country.",
+        "question": "Експерти и интелигентни хора трябва да управляват България",
         "effects": {
-            "noo": 1
+            "aristoc": 1
         }
     },
     {
         "id": 42,
-        "question": "Democracy is unstable and easily corruptable.",
+        "question": "Демокрацията е вредна.",
         "effects": {
-            "noo": 1
+            "aristoc": 1
         }
     },
     {
         "id": 43,
-        "question": "Being suitable is more important than being popular for a leader.",
+        "question": "За един лидер е по-важно да разсъждава трезво, отколкото да слуша народа си",
         "effects": {
-            "noo": 1
-        }
-    },
-    {
-        "id": 44,
-        "question": "Democracy is the least worse systsem of government.",
-        "effects": {
-            "noo": -1
+            "aristoc": 1
         }
     },
     {
         "id": 45,
-        "question": "If computers become smarter than humans, computers should rule.",
+        "question": "Ако компютрите станат по-умни от хората, то компютрите трябва да управляват",
         "effects": {
-            "noo": 1
+            "aristoc": 1
         }
     },
     {
         "id": 46,
-        "question": "Kakistocracy is a good system.",
+        "question": "Какистокрацията (управление от най-лошите, най-малко квалифицирани или най-безскрупулните граждани) е нещо добро.",
         "effects": {
-            "noo": -1
+            "aristoc": -1
         }
     },
     {
         "id": 47,
-        "question": "If a ruling body exists, it should be chosen by the people.",
+        "question": "Ако съществува орган, който да ни управлява, то е важно той да бъде избран от народа",
         "effects": {
             "const": -1
         }
     },
     {
         "id": 48,
-        "question": "A representative democracy is preferable to a direct democracy.",
+        "question": "Представителната демокрация е по-добра от пряката.",
         "effects": {
             "const": 1
         }
     },
     {
         "id": 49,
-        "question": "Strong leaderships maximizes the effiency of a nation.",
+        "question": "Силните лидери правят силни държави.",
         "effects": {
             "const": 1
         }
     },
     {
-        "id": 50,
-        "question": "The best ideology is different for every nation.",
-        "effects": {
-            "inter": -1
-        }
-    },
-    {
-        "id": 51,
-        "question": "Tyrannical governments should be toppled.",
-        "effects": {
-            "inter": -1
-        }
-    },
-    {
-        "id": 52,
-        "question": "Intervention is generally beneficial.",
-        "effects": {
-            "inter": 1
-        }
-    },
-    {
         "id": 53,
-        "question": "Globalization is inevitable, and it nust be embraced.",
+        "question": "Глобализацията е неизбежна и трябва да я приемем позитивно.",
         "effects": {
             "inter": 1
         }
     },
     {
         "id": 54,
-        "question": "If certain people migrated into our countries, it's important for them to assimilate into our culture.",
+        "question": "Ако някой емигрира в България, то е важно този човек да се интегрира в нашата култура",
         "effects": {
-            "assi": 1
+            "culturalRel": 1
         }
     },
     {
         "id": 55,
-        "question": "Each ethnicity should stay in their own communities.",
+        "question": "Всеки етнос трябва да комуникира само със своя вид.",
         "effects": {
-            "assi": 1
+            "culturalRel": 1
         }
     },
     {
-        "id": 56,
-        "question": "It's important to be diverse at all times.",
+        "id": 55,
+        "question": "Подкрепям опитите за ромска интеграция",
         "effects": {
-            "assi": -1
+            "culturalRel": 1
         }
     },
     {
         "id": 57,
-        "question": "Race and ethnicity shouldn't matter.",
+        "question": "Етноса не трябва да има значение",
         "effects": {
-            "assi": -1
+            "culturalRel": -1
+        }
+    },
+    {
+        "id": 57,
+        "question": "С цел многообразие, трябва да поставим минимални квоти в учебните заведения или предприятия за хора от етническите малцинства",
+        "effects": {
+            "culturalRel": -2
         }
     },
     {
         "id": 58,
-        "question": "Staying realistic is very important.",
+        "question": "Да бъдеш реалистично настроен е много важно.",
         "effects": {
             "prag": 1
         }
@@ -620,35 +574,35 @@ questions = [
         "id": 87,
         "question": "Local governments can understand their citizens better than the national government could.",
         "effects": {
-            "dec": 1
+            "federal": 1
         }
     },
     {
         "id": 88,
         "question": "Laws should vary from area to area and culture to culture within a country.",
         "effects": {
-            "dec": 1
+            "federal": 1
         }
     },
     {
         "id": 89,
         "question": "A federal state is better than a unitary state.",
         "effects": {
-            "dec": 1
+            "federal": 1
         }
     },
     {
         "id": 90,
         "question": "Subdivisions should not be able to exempt from national laws.",
         "effects": {
-            "dec": -1
+            "federal": -1
         }
     },
     {
         "id": 91,
         "question": "The national government protects minorities better than some local governments do.",
         "effects": {
-            "dec": -1
+            "federal": -1
         }
     },
     {
@@ -970,35 +924,35 @@ questions = [
         "id": 134,
         "question": "A progressive tax is a good idea.",
         "effects": {
-            "ptax": 1
+            "taxation": 1
         }
     },
     {
         "id": 135,
         "question": "A flat tax system is better than a progressive tax system.",
         "effects": {
-            "ptax": -1
+            "taxation": -1
         }
     },
     {
         "id": 136,
         "question": "Involuntary taxes should be abolished.",
         "effects": {
-            "ptax": -1
+            "taxation": -1
         }
     },
     {
         "id": 133,
         "question": "Taxation is theft.",
         "effects": {
-            "ptax": -1
+            "taxation": -1
         }
     },
     {
         "id": 134,
         "question": "The majority of a person's income should be go to taxes.",
         "effects": {
-            "ptax": 1
+            "taxation": 1
         }
     },
     {
@@ -1288,11 +1242,4 @@ questions = [
             "semir": 1
         }
     },
-    {
-        "id": 169,
-        "question": "The more layers of irony, the better.",
-        "effects": {
-            "semir": -1
-        }
-    }
 ];

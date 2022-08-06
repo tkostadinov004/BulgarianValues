@@ -1,5 +1,6 @@
 <head>
-    <meta charset="utf-8">
+     <meta content="text/html; charset=windows-1251" http-equiv="Content-Type">
+	 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
     <title>InfValues Quiz</title>
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:400,700" rel="stylesheet">
@@ -19,13 +20,13 @@
 <h2 style="text-align:center;" id="question-number">Loading...</h2>
 <p class="question" id="question-text"></p>
     
-<button class="button" onclick="next_question(0.8)" style="background-color: #006400;">Extremely Agree</button> <br>
-<button class="button" onclick="next_question(0.6)" style="background-color: #228B22;">Strongly Agree</button> <br> 
-<button class="button" onclick="next_question(0.4)" style="background-color: #4caf50;">Agree</button> <br>
-<button class="button" onclick="next_question(0)" style="background-color: #baba95;">Neutral/Unsure</button> <br>
-<button class="button" onclick="next_question(-0.4)" style="background-color: #f44336;">Disagree</button> <br> 
-<button class="button" onclick="next_question(-0.6)" style="background-color: #b71c1c;">Strongly Disagree</button> <br>
-<button class="button" onclick="next_question(-0.8)" style="background-color: #941919;">Extremely Disagree</button> <br> 
+<button class="button" onclick="next_question(0.8)" style="background-color: #006400;">Екстремно съгласен</button> <br>
+<button class="button" onclick="next_question(0.6)" style="background-color: #228B22;">Силно съгласен</button> <br> 
+<button class="button" onclick="next_question(0.4)" style="background-color: #4caf50;">Съгласен</button> <br>
+<button class="button" onclick="next_question(0)" style="background-color: #baba95;">Неутрален/Несигурен</button> <br>
+<button class="button" onclick="next_question(-0.4)" style="background-color: #f44336;">Несъгласен</button> <br> 
+<button class="button" onclick="next_question(-0.6)" style="background-color: #b71c1c;">Силно несъгласен</button> <br>
+<button class="button" onclick="next_question(-0.8)" style="background-color: #941919;">Екстремно несъгласен</button> <br> 
 
 <button class="small_button" onclick="prev_question()" id="back_button">Back</button>
 <button class="small_button_off" id="back_button_off">Back</button><br>
@@ -67,9 +68,10 @@
     init_question();
 
     function init_question() {
+	console.log(questionsObject[questionsOrder[qn]].question)
         $("#question-text").html(questionsObject[questionsOrder[qn]].question);
         $("#question-number").html("Question "+(qn + 1)+" of "+(questionsOrder.length));
-
+console.log()
 
 
         if (jQuery.isEmptyObject(answers)) {
