@@ -8,7 +8,7 @@
     <link rel="icon" type="x-icon" href="icon.png">
     <link rel="shortcut icon" type="x-icon" href="icon.png">
 
-    <script type="application/javascript" src="questions.js"></script>
+    <script type="application/javascript" src="js\questions.js"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
@@ -20,13 +20,13 @@
 <h2 style="text-align:center;" id="question-number">Loading...</h2>
 <p class="question" id="question-text"></p>
     
-<button class="button" onclick="next_question(0.8)" style="background-color: #006400;">Екстремно съгласен</button> <br>
-<button class="button" onclick="next_question(0.6)" style="background-color: #228B22;">Силно съгласен</button> <br> 
-<button class="button" onclick="next_question(0.4)" style="background-color: #4caf50;">Съгласен</button> <br>
+<button class="button" onclick="next_question(1.0)" style="background-color: #006400;">Екстремно съгласен</button> <br>
+<button class="button" onclick="next_question(0.7)" style="background-color: #228B22;">Силно съгласен</button> <br> 
+<button class="button" onclick="next_question(0.5)" style="background-color: #4caf50;">Съгласен</button> <br>
 <button class="button" onclick="next_question(0)" style="background-color: #baba95;">Неутрален/Несигурен</button> <br>
-<button class="button" onclick="next_question(-0.4)" style="background-color: #f44336;">Несъгласен</button> <br> 
-<button class="button" onclick="next_question(-0.6)" style="background-color: #b71c1c;">Силно несъгласен</button> <br>
-<button class="button" onclick="next_question(-0.8)" style="background-color: #941919;">Екстремно несъгласен</button> <br> 
+<button class="button" onclick="next_question(-0.5)" style="background-color: #f44336;">Несъгласен</button> <br> 
+<button class="button" onclick="next_question(-0.7)" style="background-color: #b71c1c;">Силно несъгласен</button> <br>
+<button class="button" onclick="next_question(-1.0)" style="background-color: #941919;">Екстремно несъгласен</button> <br> 
 
 <button class="small_button" onclick="prev_question()" id="back_button">Back</button>
 <button class="small_button_off" id="back_button_off">Back</button><br>
@@ -179,7 +179,7 @@ console.log()
             effectName = Object.keys(max)[i]
 
             if (max[effectName] > 0) {
-                pct[effectName] = (Math.round((score[effectName]*10/max[effectName]) * 100) / 100).toFixed(2);
+                pct[effectName] = (100 * (max[effectName] + score[effectName]) / (2 * max[effectName])).toFixed(1);
             } else {
                 pct[effectName] = 0
             }
