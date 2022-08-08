@@ -60,7 +60,7 @@ h1 {
 h2 {
     color: #333333;
     font-family: 'Montserrat', sans-serif;
-    font-size: 34pt;
+    font-size: 25pt;
     line-height: 36pt;
     margin-top: 12pt;
     margin-bottom: 10pt;
@@ -349,7 +349,7 @@ div.religious {
 }
 
 div.violent {
-    background-color: #58A2B1;
+    background-color: #D2D2D2;
     text-align: left;
     border-right-style: solid;
 }
