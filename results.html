@@ -71,8 +71,8 @@
     <img id="compass" src="compass.png" alt="Image" style="display: none;" />
 
     <script>
-        function SetLabel(value, array) {
-            if (value > 100) { return "Error" }
+        function SetLabel(value, array) {			
+            if (value > 100 || array == null) { return "Списъкът с идеологии за тази ос не съществува" }
             else if (value > 90) { return array[0] }
             else if (value > 80) { return array[1] }
             else if (value > 70) { return array[2] }
@@ -82,7 +82,7 @@
             else if (value >= 30) { return array[5] }
             else if (value >= 15) { return array[6] }
             else if (value >= 0) { return array[7] }
-            else { return "Error" }
+            else { return "Грешка" }
         }
 
         function GetQueryVariable(variable) {
@@ -105,12 +105,6 @@
             if (innerel.offsetWidth + 20 > outerel.offsetWidth) {
                 innerel.style.visibility = "hidden"
             }   
-            if (value == 0) {
-                return null;
-            }
-            else {
-                return 1;
-            }
         }
 
         function GenerateImage(name, height) {
@@ -174,11 +168,13 @@
 
             var headerText = GenerateText(fullNames[i]);
 
-            headerText.innerText = fullNames[i] + ": " + SetLabel(leftValue, axisArrayElement["labels"]);
+            headerText.innerText = fullNames[i] + ": ";
 
             results.appendChild(headerText);
             results.appendChild(GetAxis(axisArrayElement["shortenedName"], axisArrayElement["leftSide"], axisArrayElement["rightSide"]));
 
+			headerText.innerHTML += SetLabel(leftValue, axisArrayElement["labels"]);
+			
             SetBarValue(axisArrayElement["leftSide"], leftValue);
             SetBarValue(axisArrayElement["rightSide"], rightValue);
 
