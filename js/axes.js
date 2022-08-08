@@ -180,12 +180,6 @@ axes = [
         "rightSide": "futureart"
     },
     {
-        "id": 28,
-        "shortenedName": "consq",
-        "leftSide": "deontological",
-        "rightSide": "conseq"
-    },
-    {
         "id": 29,
         "shortenedName": "enth",
         "leftSide": "relaxed",
