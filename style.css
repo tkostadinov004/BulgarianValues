@@ -60,10 +60,10 @@ h1 {
 h2 {
     color: #333333;
     font-family: 'Montserrat', sans-serif;
-    font-size: 36pt;
-    line-height: 1;
+    font-size: 34pt;
+    line-height: 36pt;
     margin-top: 12pt;
-    margin-bottom: 0pt;
+    margin-bottom: 10pt;
 }
 li {
     font-size: 16pt;
@@ -264,20 +264,464 @@ div.bar {
     display: block;
     width: 50%;
 }
-div.socialist {
-    background-color: #f44336;
-    text-align: left;
-    border-right-style: solid;
-}
-div.capitalist {
-    background-color: #00897b;
-    text-align: right;
-    border-left-style: solid;
-}
 div.text-wrapper {
     font-family: 'Montserrat', sans-serif;
     font-size: 36pt;
     line-height: 36pt;
     color: #222222;
     display: inline-block;
+}
+span.weight-300 {
+    font-weight: 300;
+}
+
+div.socialist {
+    background-color: #E06666;
+    text-align: left;
+    border-right-style: solid;
+}
+
+div.capitalist {
+    background-color: #01C996;
+    text-align: right;
+    border-left-style: solid;
+}
+div.libertarian {
+    background-color: #F1C232;
+    text-align: left;
+    border-right-style: solid;
+}
+
+div.authoritarian {
+    background-color: #6FA8DC;
+    text-align: right;
+    border-left-style: solid;
+}
+
+div.globalist {
+    background-color: #58A2B1;
+    text-align: left;
+    border-right-style: solid;
+}
+
+div.nationalist {
+    background-color: #F6B26B;
+    text-align: right;
+    border-left-style: solid;
+}
+
+div.progressive {
+    background-color: #C27BA0;
+    text-align: left;
+    border-right-style: solid;
+}
+
+div.conservative {
+    background-color: #B6D7A8;
+    text-align: right;
+    border-left-style: solid;
+}
+
+/*//*/
+
+div.decelerationist {
+    background-color: #C4B791;
+    text-align: left;
+    border-right-style: solid;
+}
+
+div.accelerationist {
+    background-color: #818FC6;
+    text-align: right;
+    border-left-style: solid;
+}
+
+div.atheist {
+    background-color: #8DA078;
+    text-align: left;
+    border-right-style: solid;
+}
+
+div.religious {
+    background-color: #A285C4;
+    text-align: right;
+    border-left-style: solid;
+}
+
+div.violent {
+    background-color: #58A2B1;
+    text-align: left;
+    border-right-style: solid;
+}
+
+div.nonviolent {
+    background-color: #54B948;
+    text-align: right;
+    border-left-style: solid;
+}
+
+div.democrat {
+    background-color: #BFEFAA;
+    text-align: left;
+    border-right-style: solid;
+}
+
+div.aristocrat {
+    background-color: #E29198;
+    text-align: right;
+    border-left-style: solid;
+}
+/*//*/
+
+div.repdem {
+    background-color: #EFC437;
+    text-align: left;
+    border-right-style: solid;
+}
+
+div.absolute {
+    background-color: #7D359E;
+    text-align: right;
+    border-left-style: solid;
+}
+
+div.isolationist {
+    background-color: #3D85C6;
+    text-align: left;
+    border-right-style: solid;
+}
+
+div.interventionist {
+    background-color: #BEC233;
+    text-align: right;
+    border-left-style: solid;
+}
+
+div.multicultural {
+    background-color: #EA9999;
+    text-align: left;
+    border-right-style: solid;
+}
+
+div.monocultural {
+    background-color: #E0BE9E;
+    text-align: right;
+    border-left-style: solid;
+}
+
+div.idealist {
+    background-color: #EF9780;
+    text-align: left;
+    border-right-style: solid;
+}
+
+div.realist {
+    background-color: #A2C4C9;
+    text-align: right;
+    border-left-style: solid;
+}
+/*//*/
+
+div.perslib {
+    background-color: #87FF9F;
+    text-align: left;
+    border-right-style: solid;
+}
+
+div.moralism {
+    background-color: #6073E0;
+    text-align: right;
+    border-left-style: solid;
+}
+
+div.regulationism {
+    background-color: #F7A3A3;
+    text-align: left;
+    border-right-style: solid;
+}
+
+div.freemarket {
+    background-color: #FFA468;
+    text-align: right;
+    border-left-style: solid;
+}
+
+div.youthrights {
+    background-color: #70CDFF;
+    text-align: left;
+    border-right-style: solid;
+}
+
+div.paternalism {
+    background-color: #70CDFF;
+    text-align: right;
+    border-left-style: solid;
+}
+
+div.organized {
+    background-color: #60BFFF;
+    text-align: left;
+    border-right-style: solid;
+}
+
+div.disorderly {
+    background-color: #FFC268;
+    text-align: right;
+    border-left-style: solid;
+}
+/*//*/
+
+div.altruistic {
+    background-color: #3AFF1C;
+    text-align: left;
+    border-right-style: solid;
+}
+
+div.rude {
+    background-color: #FF878F;
+    text-align: right;
+    border-left-style: solid;
+}
+
+div.centralism {
+    background-color: #F75D45;
+    text-align: left;
+    border-right-style: solid;
+}
+
+div.decentralism {
+    background-color: #E6E87A;
+    text-align: right;
+    border-left-style: solid;
+}
+
+div.collectivism {
+    background-color: #FF1C49;
+    text-align: left;
+    border-right-style: solid;
+}
+
+div.individualism {
+    background-color: #99D8EA;
+    text-align: right;
+    border-left-style: solid;
+}
+
+div.surveillance {
+    background-color: #D84929;
+    text-align: left;
+    border-right-style: solid;
+}
+
+div.privacy {
+    background-color: #D3AC10;
+    text-align: right;
+    border-left-style: solid;
+}
+/*//*/
+
+div.rehab {
+    background-color: #93E9FF;
+    text-align: left;
+    border-right-style: solid;
+}
+
+div.punishment {
+    background-color: #EFE27C;
+    text-align: right;
+    border-left-style: solid;
+}
+
+div.pragmatic {
+    background-color: #FF93B6;
+    text-align: left;
+    border-right-style: solid;
+}
+
+div.spiritualistic {
+    background-color: #A9EFD9;
+    text-align: right;
+    border-left-style: solid;
+}
+
+div.past {
+    background-color: #FF7400;
+    text-align: left;
+    border-right-style: solid;
+}
+
+div.future {
+    background-color: #15AE24;
+    text-align: right;
+    border-left-style: solid;
+}
+
+div.prochoice {
+    background-color: #C0C0C0;
+    text-align: left;
+    border-right-style: solid;
+}
+
+div.prolife {
+    background-color: #87FF9F;
+    text-align: right;
+    border-left-style: solid;
+}
+/*//*/
+
+div.environmentalism {
+    background-color: #DBFFBF;
+    text-align: left;
+    border-right-style: solid;
+}
+
+div.industrialism {
+    background-color: #FFBCB2;
+    text-align: right;
+    border-left-style: solid;
+}
+
+div.volunarytax {
+    background-color: #F9CB9C;
+    text-align: left;
+    border-right-style: solid;
+}
+
+div.progressivetax {
+    background-color: #45818E;
+    text-align: right;
+    border-left-style: solid;
+}
+
+div.pastart {
+    background-color: #9B7653;
+    text-align: left;
+    border-right-style: solid;
+}
+
+div.futureart {
+    background-color: #9FC5E8;
+    text-align: right;
+    border-left-style: solid;
+}
+
+div.relaxed {
+    background-color: #C27BA0;
+    text-align: left;
+    border-right-style: solid;
+}
+
+div.productive {
+    background-color: #CF4125;
+    text-align: right;
+    border-left-style: solid;
+}
+/*//*/
+
+div.freespeech {
+    background-color: #26CCBB;
+    text-align: left;
+    border-right-style: solid;
+}
+
+div.censorship {
+    background-color: #FF4F38;
+    text-align: right;
+    border-left-style: solid;
+}
+
+div.feelings {
+    background-color: #AF507B;
+    text-align: left;
+    border-right-style: solid;
+}
+
+div.facts {
+    background-color: #8AFF70;
+    text-align: right;
+    border-left-style: solid;
+}
+
+div.educated {
+    background-color: #73AFB9;
+    text-align: left;
+    border-right-style: solid;
+}
+
+div.tribalpopulation {
+    background-color: #608B3B;
+    text-align: right;
+    border-left-style: solid;
+}
+
+div.compulsoryweaponisation {
+    background-color: #FF5E66;
+    text-align: left;
+    border-right-style: solid;
+}
+
+div.gunban {
+    background-color: #E5CD85;
+    text-align: right;
+    border-left-style: solid;
+}
+/*//*/
+
+div.protectionism {
+    background-color: #49B3FF;
+    text-align: left;
+    border-right-style: solid;
+}
+
+div.freetrade {
+    background-color: #EFA458;
+    text-align: right;
+    border-left-style: solid;
+}
+
+div.openminded {
+    background-color: #7CFFC0;
+    text-align: left;
+    border-right-style: solid;
+}
+
+div.closeminded {
+    background-color: #FF5A4F;
+    text-align: right;
+    border-left-style: solid;
+}
+
+div.animalrights {
+    background-color: #7CAD5A;
+    text-align: left;
+    border-right-style: solid;
+}
+
+div.poaching {
+    background-color: #7CE2BA;
+    text-align: right;
+    border-left-style: solid;
+}
+
+div.unionized {
+    background-color: #EC0D55;
+    text-align: left;
+    border-right-style: solid;
+}
+
+div.hierarchical {
+    background-color: #FF6B00;
+    text-align: right;
+    border-left-style: solid;
+}
+div.strictborders {
+    background-color: #B89284;
+    text-align: left;
+    border-right-style: solid;
+}
+
+div.openborders {
+    background-color: #79A34D;
+    text-align: right;
+    border-left-style: solid;
 }
