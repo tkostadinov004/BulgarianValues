@@ -2,6 +2,7 @@ html {
     background-color: #bbbbbb;
     padding: 0px;
 }
+
 body {
     width: 80%;
     min-height: calc(100vh - 4em);
@@ -13,6 +14,7 @@ body {
     border-right-style: solid;
     border-width: 20px;
 }
+
 p {
     color: #444444;
     font-family: 'Roboto', sans-serif;
@@ -20,16 +22,20 @@ p {
     line-height: 1;
     margin: 4pt;
 }
-a{
+
+a {
     color: #2222DD;
 }
-a:hover{
-    color: #22DDDD;
-}
+
+    a:hover {
+        color: #22DDDD;
+    }
+
 p.value-description {
     text-indent: -16pt;
     margin-left: 20pt;
 }
+
 p.question {
     margin: 16pt auto;
     color: #333333;
@@ -46,8 +52,8 @@ p.question {
     justify-content: center;
     align-items: center;
     text-align: center;
-
 }
+
 h1 {
     color: #222222;
     font-family: 'Montserrat', sans-serif;
@@ -57,6 +63,7 @@ h1 {
     margin-top: 0pt;
     margin-bottom: 0pt;
 }
+
 h2 {
     color: #333333;
     font-family: 'Montserrat', sans-serif;
@@ -65,10 +72,12 @@ h2 {
     margin-top: 12pt;
     margin-bottom: 10pt;
 }
+
 li {
     font-size: 16pt;
     text-indent: 16pt;
 }
+
 a {
     font-family: inherit;
 }
@@ -130,6 +139,7 @@ img.center {
     width: 50%;
     min-width: 500pt;
 }
+
 .button {
     background-color: #2196f3;
     font-family: 'Montserrat', sans-serif;
@@ -146,6 +156,7 @@ img.center {
     margin: -2px auto;
     cursor: pointer;
 }
+
 .small_button, .small_button_off {
     background-color: #333;
     font-family: 'Montserrat', sans-serif;
@@ -162,6 +173,7 @@ img.center {
     margin: -2px auto;
     cursor: pointer;
 }
+
 .small_button_off {
     background-color: #ddd;
     color: #888;
@@ -169,6 +181,7 @@ img.center {
     cursor: not-allowed;
     margin: -4px auto;
 }
+
 div.text-wrapper {
     font-family: 'Montserrat', sans-serif;
     font-size: 36pt;
@@ -176,9 +189,11 @@ div.text-wrapper {
     color: #222222;
     display: inline-block;
 }
+
 span.weight-300 {
     font-weight: 300;
 }
+
 canvas {
     border-color: #444444;
     border-style: solid;
@@ -189,7 +204,7 @@ canvas {
     margin-left: auto;
     margin-right: auto;
     max-width: 75%;
-	min-width: 500pt;
+    min-width: 500pt;
 }
 
 .center-container {
@@ -202,19 +217,24 @@ canvas {
     .center-container {
         max-width: 85%;
     }
+
     h1 {
         font-size: 60pt;
     }
+
     h2 {
         font-size: 30pt;
     }
+
     body {
         width: calc(100% - 4em - 20px);
         border-width: 10px;
     }
+
     .button {
         min-width: 80%;
     }
+
     canvas,
     img.center,
     .text_input,
@@ -230,12 +250,15 @@ canvas {
     .center-container {
         max-width: 95%;
     }
+
     h1 {
         font-size: 42pt;
     }
+
     h2 {
         font-size: 24pt;
     }
+
     body {
         width: calc(100% - 2em);
         padding-left: 1em;
@@ -243,12 +266,14 @@ canvas {
         border-width: 0;
     }
 }
+
 div.axis {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
 div.bar {
     height: 36pt;
     line-height: 36pt;
@@ -264,6 +289,7 @@ div.bar {
     display: block;
     width: 50%;
 }
+
 div.text-wrapper {
     font-family: 'Montserrat', sans-serif;
     font-size: 36pt;
@@ -271,6 +297,7 @@ div.text-wrapper {
     color: #222222;
     display: inline-block;
 }
+
 span.weight-300 {
     font-weight: 300;
 }
@@ -286,6 +313,7 @@ div.capitalist {
     text-align: right;
     border-left-style: solid;
 }
+
 div.libertarian {
     background-color: #F1C232;
     text-align: left;
@@ -714,6 +742,7 @@ div.hierarchical {
     text-align: right;
     border-left-style: solid;
 }
+
 div.strictborders {
     background-color: #B89284;
     text-align: left;
@@ -724,4 +753,171 @@ div.openborders {
     background-color: #79A34D;
     text-align: right;
     border-left-style: solid;
+}
+
+.helpButton {
+    background-color: #0093AF;
+    font-family: 'Montserrat', sans-serif;
+    border: none;
+    border-radius: 8pt;
+    color: white;
+    padding: 8pt;
+    width: 20%;
+    min-width: 100pt;
+    text-align: center;
+    /*float: right;*/
+    text-decoration: none;
+    display: block;
+    font-size: 24pt;
+    margin: 5px auto;
+    cursor: pointer;
+    /* margin-right: 0;
+    margin-left: auto;*/
+}
+
+#helpText {
+    font-family: 'Montserrat', sans-serif;
+    border: none;
+    border-radius: 8pt;
+    color: #333333;
+    padding: 8pt;
+    width: 20%;
+    min-width: 100pt;
+    text-align: center;
+    /*float: right;*/
+    text-decoration: none;
+    display: block;
+    font-size: 24pt;
+    margin: 5px auto;
+    cursor: pointer;
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: #333;
+    overflow: hidden;
+}
+
+    /* Style the links inside the navigation bar */
+    .topnav a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+        /* Change the color of links on hover */
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        /* Add a color to the active/current link */
+        .topnav a.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+#openModal:hover {
+    cursor: pointer;
+}
+
+
+/*
+
+*/
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #d1cdcd;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+.fade-in:hover {
+    animation-name: FadeIn;
+    animation-duration: 0.2s;
+    transition-timing-function: linear;
+}
+
+@keyframes FadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes FadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes FadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes FadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-ms-keyframes FadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }

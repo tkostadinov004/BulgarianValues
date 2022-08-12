@@ -3,9 +3,7 @@
 <head>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:400,700" rel="stylesheet">
     <link href='style.css' rel='stylesheet' type='text/css'>
-    <title>InfValues Results</title>
-    <link rel="icon" type="x-icon" href="icon.png">
-    <link rel="shortcut icon" type="x-icon" href="icon.png">
+    <title>BulgarianValues резултати</title>
     <meta content="text/html; charset=windows-1251" http-equiv="Content-Type">
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
 
@@ -14,39 +12,38 @@
 
 </head>
 <body>
-    <h1>InfValues</h1>
+    <h1>BulgarianValues</h1>
     <hr>
 
-    <h1>Results</h1>
+    <h1>Резултати</h1>
     <br>
 
     <div class="center-container">
-        <p style="margin:-2px auto">
-            Thanks for taking the test! Here are your results below.
-            There are currently 45 Axes in the test. <b>This test is not completed yet.</b>
+        <p style="margin:-2px auto; text-align: center;">
+            Благодаря, че направихте теста!
+            Теста съдържа 37 оси.
         </p>
         <br>
 
 
-        <p id="compareCta" style="margin: 0">
-            If you have someone else's link, you can
-            <a href="#" class="toggle-compare-button">click here to compare</a>
-            your results.
+        <!--<p id="compareCta" style="margin: 0">
+        If you have someone else's link, you can
+        <a href="#" class="toggle-compare-button">click here to compare</a>
+        your results.
+    </p>-->
+        <!--<div id="compareContainer" style="display: none">
+        <p style="margin: 0;">
+            Paste a link below to compare the results. An arrow
+            will indicate how different are the results from the link.
+            <a href="#" class="toggle-compare-button">Disable comparison</a>
         </p>
-
-        <div id="compareContainer" style="display: none">
-            <p style="margin: 0;">
-                Paste a link below to compare the results. An arrow
-                will indicate how different are the results from the link.
-                <a href="#" class="toggle-compare-button">Disable comparison</a>
-            </p>
-            <input id="compareLinkInput" type="text"
-                   style="width: 100%; font-size: 0.9em; padding: 4px; margin: 16px 0 0;"
-                   placeholder="Paste a link to compare" />
-        </div>
-        <br>
+        <input id="compareLinkInput" type="text"
+               style="width: 100%; font-size: 0.9em; padding: 4px; margin: 16px 0 0;"
+               placeholder="Paste a link to compare" />
     </div>
-
+    <br>-->
+    </div>
+        
     <div id="results">
         <!--<div class="axis">
             <img id="img-equality" src="equality.svg" height="128pt" />
@@ -57,22 +54,23 @@
     </div>
 
 
-    <div class="center-container">
+    <!--<div class="center-container">
         <p style="margin:0">
             If you have any suggestions or opinions about this test, please fill in <a href="https://forms.gle/AA5aYwSb9MnHunMc8">this form</a>.
         </p>
         </br>
-    </div>
+    </div>-->
 
-    <canvas id="canvas"></canvas>
-    <button class="button" onclick="location.href='index.html';" style="background-color: #2196f3;">Back</button>
+    <!--<canvas id="canvas"></canvas>-->
+    <button class="button" onclick="location.href='index.html';" style="background-color: #2196f3;" onmouseover="this.style.backgroundColor = '#01748a';" onmouseout="this.style.backgroundColor = '#2196F3';">Назад</button>
     <br>
 
     <img id="compass" src="compass.png" alt="Image" style="display: none;" />
 
     <script>
         function SetLabel(value, array) {			
-            if (value > 100 || array == null) { return "Списъкът с идеологии за тази ос не съществува" }
+			if(value > 100) {return "Грешка"}
+            if (array == null) { return "Списъкът с идеологии за тази ос не съществува" }
             else if (value > 90) { return array[0] }
             else if (value > 80) { return array[1] }
             else if (value > 70) { return array[2] }
@@ -178,21 +176,17 @@
             SetBarValue(axisArrayElement["leftSide"], leftValue);
             SetBarValue(axisArrayElement["rightSide"], rightValue);
 
-            if (leftValue == 0) {
+            if (leftValue <= 0) {
                 var innerAxis = document.getElementById(axisArrayElement["shortenedName"]);
                 var bar = document.getElementById("bar-" + axisArrayElement["leftSide"]);
                 innerAxis.removeChild(bar);
             }
-            else if (rightValue == 0) {
+            else if (rightValue <= 0) {
                 var innerAxis = document.getElementById(axisArrayElement["shortenedName"]);
                 var bar = document.getElementById("bar-" + axisArrayElement["rightSide"]);
                 innerAxis.removeChild(bar);
-            }
-
-            
+            }        
         }
-
-
     </script>
 </body>
 </html>
