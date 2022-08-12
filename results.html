@@ -3,7 +3,7 @@
 <head>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:400,700" rel="stylesheet">
     <link href='style.css' rel='stylesheet' type='text/css'>
-    <title>BulgarianValues резултати</title>
+    <title>BulgarianValues СЂРµР·СѓР»С‚Р°С‚Рё</title>
     <meta content="text/html; charset=windows-1251" http-equiv="Content-Type">
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
     <meta content="text/html; charset=ansi" http-equiv="Content-Type">
@@ -16,13 +16,13 @@
     <h1>BulgarianValues</h1>
     <hr>
 
-    <h1>Резултати</h1>
+    <h1>Р РµР·СѓР»С‚Р°С‚Рё</h1>
     <br>
 
     <div class="center-container">
         <p style="margin:-2px auto; text-align: center;">
-            Благодаря, че направихте теста!
-            Теста съдържа 37 оси.
+            Р‘Р»Р°РіРѕРґР°СЂСЏ, С‡Рµ РЅР°РїСЂР°РІРёС…С‚Рµ С‚РµСЃС‚Р°!
+            РўРµСЃС‚Р° СЃСЉРґСЉСЂР¶Р° 37 РѕСЃРё.
         </p>
         <br>
 
@@ -63,25 +63,25 @@
     </div>-->
 
     <!--<canvas id="canvas"></canvas>-->
-    <button class="button" onclick="location.href='index.html';" style="background-color: #2196f3;" onmouseover="this.style.backgroundColor = '#01748a';" onmouseout="this.style.backgroundColor = '#2196F3';">Назад</button>
+    <button class="button" onclick="location.href='index.html';" style="background-color: #2196f3;" onmouseover="this.style.backgroundColor = '#01748a';" onmouseout="this.style.backgroundColor = '#2196F3';">РќР°Р·Р°Рґ</button>
     <br>
 
     <img id="compass" src="compass.png" alt="Image" style="display: none;" />
 
     <script>
         function SetLabel(value, array) {			
-			if(value > 100) {return "Грешка"}
-            if (array == null) { return "Списъкът с идеологии за тази ос не съществува" }
+			if(value > 100) {return "Р“СЂРµС€РєР°"}
+            if (array == null) { return "РЎРїРёСЃСЉРєСЉС‚ СЃ РёРґРµРѕР»РѕРіРёРё Р·Р° С‚Р°Р·Рё РѕСЃ РЅРµ СЃСЉС‰РµСЃС‚РІСѓРІР°" }
             else if (value > 90) { return array[0] }
             else if (value > 80) { return array[1] }
             else if (value > 70) { return array[2] }
             else if (value >= 60) { return array[3] }
-            else if (value == 50) { return "Балансиран" }
+            else if (value == 50) { return "Р‘Р°Р»Р°РЅСЃРёСЂР°РЅ" }
             else if (value >= 40) { return array[4] }
             else if (value >= 30) { return array[5] }
             else if (value >= 15) { return array[6] }
             else if (value >= 0) { return array[7] }
-            else { return "Грешка" }
+            else { return "Р“СЂРµС€РєР°" }
         }
 
         function GetQueryVariable(variable) {
