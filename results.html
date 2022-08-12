@@ -28,23 +28,23 @@
 
 
         <!--<p id="compareCta" style="margin: 0">
-        If you have someone else's link, you can
-        <a href="#" class="toggle-compare-button">click here to compare</a>
-        your results.
-    </p>-->
+            If you have someone else's link, you can
+            <a href="#" class="toggle-compare-button">click here to compare</a>
+            your results.
+        </p>-->
         <!--<div id="compareContainer" style="display: none">
-        <p style="margin: 0;">
-            Paste a link below to compare the results. An arrow
-            will indicate how different are the results from the link.
-            <a href="#" class="toggle-compare-button">Disable comparison</a>
-        </p>
-        <input id="compareLinkInput" type="text"
-               style="width: 100%; font-size: 0.9em; padding: 4px; margin: 16px 0 0;"
-               placeholder="Paste a link to compare" />
+            <p style="margin: 0;">
+                Paste a link below to compare the results. An arrow
+                will indicate how different are the results from the link.
+                <a href="#" class="toggle-compare-button">Disable comparison</a>
+            </p>
+            <input id="compareLinkInput" type="text"
+                   style="width: 100%; font-size: 0.9em; padding: 4px; margin: 16px 0 0;"
+                   placeholder="Paste a link to compare" />
+        </div>
+        <br>-->
     </div>
-    <br>-->
-    </div>
-        
+
     <div id="results">
         <!--<div class="axis">
             <img id="img-equality" src="equality.svg" height="128pt" />
@@ -61,7 +61,6 @@
         </p>
         </br>
     </div>-->
-
     <!--<canvas id="canvas"></canvas>-->
     <button class="button" onclick="location.href='index.html';" style="background-color: #2196f3;" onmouseover="this.style.backgroundColor = '#01748a';" onmouseout="this.style.backgroundColor = '#2196F3';">Назад</button>
     <br>
@@ -69,8 +68,8 @@
     <img id="compass" src="compass.png" alt="Image" style="display: none;" />
 
     <script>
-        function SetLabel(value, array) {			
-			if(value > 100) {return "Грешка"}
+        function SetLabel(value, array) {
+            if (value > 100) { return "Грешка" }
             if (array == null) { return "Списъкът с идеологии за тази ос не съществува" }
             else if (value > 90) { return array[0] }
             else if (value > 80) { return array[1] }
@@ -103,7 +102,7 @@
             innerel.innerHTML = (value + "%")
             if (innerel.offsetWidth + 20 > outerel.offsetWidth) {
                 innerel.style.visibility = "hidden"
-            }   
+            }
         }
 
         function GenerateImage(name, height) {
@@ -172,8 +171,8 @@
             results.appendChild(headerText);
             results.appendChild(GetAxis(axisArrayElement["shortenedName"], axisArrayElement["leftSide"], axisArrayElement["rightSide"]));
 
-			headerText.innerHTML += SetLabel(leftValue, axisArrayElement["labels"]);
-			
+            headerText.innerHTML += SetLabel(leftValue, axisArrayElement["labels"]);
+
             SetBarValue(axisArrayElement["leftSide"], leftValue);
             SetBarValue(axisArrayElement["rightSide"], rightValue);
 
@@ -186,7 +185,7 @@
                 var innerAxis = document.getElementById(axisArrayElement["shortenedName"]);
                 var bar = document.getElementById("bar-" + axisArrayElement["rightSide"]);
                 innerAxis.removeChild(bar);
-            }        
+            }
         }
     </script>
 </body>
