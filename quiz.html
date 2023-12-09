@@ -6,8 +6,6 @@
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:400,700" rel="stylesheet">
     <link href='style.css' rel='stylesheet' type='text/css'>
-
-    <script type="application/javascript" src="js\questions.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
@@ -17,198 +15,23 @@
     <h2 style="text-align:center;" id="question-number">Зарежда се...</h2>
 
     <div id="help">
-        <button class="helpButton" onclick="help()" id="helpButton" onmouseover="this.style.backgroundColor = '#01748a';" onmouseout="this.style.backgroundColor = '#0093AF';">Помощ</button>
-        <p id="helpText"></p>
+        <button class="help-button" id="help-button" onmouseover="this.style.backgroundColor = '#01748a';" onmouseout="this.style.backgroundColor = '#0093AF';">Помощ</button>
+        <p id="help-text"></p>
     </div>
 
     <p class="question" id="question-text"></p>
 
-    <button class="button" onclick="next_question(1.0)" style="background-color: #006400;" onmouseover="this.style.backgroundColor = '#014201';" onmouseout="this.style.backgroundColor = '#006400';">Екстремно съгласен</button> <br>
-    <button class="button" onclick="next_question(0.7)" style="background-color: #228B22;" onmouseover="this.style.backgroundColor = '#145214';" onmouseout="this.style.backgroundColor = '#228B22';">Силно съгласен</button> <br>
-    <button class="button" onclick="next_question(0.5)" style="background-color: #4caf50;" onmouseover="this.style.backgroundColor = '#3c8c40';" onmouseout="this.style.backgroundColor = '#4caf50';">Съгласен</button> <br>
-    <button class="button" onclick="next_question(0)" style="background-color: #baba95;" onmouseover="this.style.backgroundColor = '#969678';" onmouseout="this.style.backgroundColor = '#baba95';">Неутрален/Несигурен</button> <br>
-    <button class="button" onclick="next_question(-0.5)" style="background-color: #f44336;" onmouseover="this.style.backgroundColor = '#cf382d';" onmouseout="this.style.backgroundColor = '#f44336';">Несъгласен</button> <br>
-    <button class="button" onclick="next_question(-0.7)" style="background-color: #b71c1c;" onmouseover="this.style.backgroundColor = '#8f1515';" onmouseout="this.style.backgroundColor = '#b71c1c';">Силно несъгласен</button> <br>
-    <button class="button" onclick="next_question(-1.0)" style="background-color: #941919;" onmouseover="this.style.backgroundColor = '#701212';" onmouseout="this.style.backgroundColor = '#941919';">Екстремно несъгласен</button> <br>
+    <div class="answer-buttons">
+        <button class="button" id="ea" style="background-color: #006400;" onmouseover="this.style.backgroundColor = '#014201';" onmouseout="this.style.backgroundColor = '#006400';">Екстремно съгласен</button> <br>
+        <button class="button" id="sa" style="background-color: #228B22;" onmouseover="this.style.backgroundColor = '#145214';" onmouseout="this.style.backgroundColor = '#228B22';">Силно съгласен</button> <br>
+        <button class="button" id="a" style="background-color: #4caf50;" onmouseover="this.style.backgroundColor = '#3c8c40';" onmouseout="this.style.backgroundColor = '#4caf50';">Съгласен</button> <br>
+        <button class="button" id="ntr" style="background-color: #baba95;" onmouseover="this.style.backgroundColor = '#969678';" onmouseout="this.style.backgroundColor = '#baba95';">Неутрален/Несигурен</button> <br>
+        <button class="button" id="d" style="background-color: #f44336;" onmouseover="this.style.backgroundColor = '#cf382d';" onmouseout="this.style.backgroundColor = '#f44336';">Несъгласен</button> <br>
+        <button class="button" id="sd" style="background-color: #b71c1c;" onmouseover="this.style.backgroundColor = '#8f1515';" onmouseout="this.style.backgroundColor = '#b71c1c';">Силно несъгласен</button> <br>
+        <button class="button" id="ed" style="background-color: #941919;" onmouseover="this.style.backgroundColor = '#701212';" onmouseout="this.style.backgroundColor = '#941919';">Екстремно несъгласен</button> <br>
+    </div>
 
-    <button class="small_button" onclick="prev_question()" id="back_button" onmouseover="this.style.backgroundColor = '#bababa';" onmouseout="this.style.backgroundColor = '#333';">Назад</button>
-    <button class="small_button_off" id="back_button_off">Назад</button><br>
-
-    <script>
-        // variables
-        var answers = new Object();     // Store user's answers
-        var qn = 0; // Current question order
-
-
-        // Populate questionsObject
-
-        var questionsObject = new Object();     // Question objects with ID keys
-        questions.forEach(populateQO);
-
-        function populateQO(value) {
-            questionsObject[value['id']] = value
-        }
-
-        // Populate & shuffle questionsOrder
-
-        var questionsOrder = Object.keys(questionsObject); //Array of shuffled question IDs
-
-        const urlParams = new URLSearchParams(window.location.search);
-        if (urlParams.get("shuffle") == "true") {
-            shuffleArray(questionsOrder);
-        }
-
-        function shuffleArray(array) {
-            for (let i = array.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [array[i], array[j]] = [array[j], array[i]];
-            }
-        }
-
-        // Question initialization
-
-        init_question();
-
-        function init_question() {
-            console.log(questionsObject[questionsOrder[qn]].question)
-            $("#question-text").html(questionsObject[questionsOrder[qn]].question);
-            $("#question-number").html("Въпрос " + (qn + 1) + " от " + (questionsOrder.length));
-            console.log()
-
-            var button = document.getElementById("helpButton");
-            if (button != null) {
-                //console.log(qn);
-                var helpInfo = questionsObject[questionsOrder[qn]]["help"];
-                console.log(helpInfo);
-                if (helpInfo == null || helpInfo == undefined) {
-                    $('#helpText').hide()
-                    $('#helpButton').hide()
-                }
-                else {
-                    $('#helpButton').show()
-                }
-            }
-            if (jQuery.isEmptyObject(answers)) {
-                $('#back_button').hide()
-                $('#back_button_off').show()
-            } else {
-                $('#back_button').show()
-                $('#back_button_off').hide()
-            }
-        }
-
-
-        // Next question
-
-        function next_question(answer) {
-            if (qn === questionsOrder.length) {
-                return;
-            }
-
-            answers[questionsOrder[qn]] = answer;
-            qn++;
-
-            if (qn < questionsOrder.length) {
-                init_question();
-            } else {
-                results();
-            }
-        }
-
-
-        // Previous question
-
-        function prev_question() {
-            if (jQuery.isEmptyObject(answers)) {
-                $('#back_button').hide()
-                $('#back_button_off').show()
-                return;
-            }
-            qn--;
-
-            delete answers[questionsOrder[qn]];
-
-            init_question();
-        }
-        function help() {
-            console.log(questionsObject[qn]["help"]);
-            var x = document.getElementById("helpText");
-            x.innerHTML = questionsObject[qn]["help"];
-            if (x.style.display === "none") {
-                x.style.display = "block";
-            } else {
-                x.style.display = "none";
-            }
-        }
-        // RESULTS
-
-        function results() {
-
-            window.sessionStorage.answers = JSON.stringify(answers);
-
-
-            // Calculate final results
-            pct = percentageCalculation();
-            window.sessionStorage.percentages = JSON.stringify(pct);
-
-            // prepare arguments
-            var args = '?';
-            for (const i in Object.keys(pct)) {
-                effectName = Object.keys(pct)[i]
-                args += `${effectName}=${pct[effectName]}`
-
-                var cycle = parseInt(i)
-                if (cycle + 1 !== Object.keys(pct).length) {
-                    args += '&'
-                }
-            }
-            //return;
-            location.href = `results.html` + args
-
-        }
-
-
-        // Calculate percentage
-
-        function percentageCalculation() {
-            // calc max
-            var max = new Object(); // Max possible scores
-            var score = new Object(); // User scores
-            var pct = new Object(); // Percentages/Score
-
-            // prepare
-            for (const id in answers) {
-                for (const effectName in questionsObject[id].effects) {
-                    max[effectName] = 0
-                    score[effectName] = 0
-                }
-            }
-
-            // get max & scores
-            for (const id in answers) {
-                // dismiss "don't know"
-                if (answers[id] !== null) {
-                    for (const effectName in questionsObject[id].effects) {
-                        max[effectName] += Math.abs(questionsObject[id].effects[effectName]);
-                        score[effectName] += answers[id] * questionsObject[id].effects[effectName];
-                    }
-                }
-            }
-
-            // calc score
-
-            for (const i in Object.keys(max)) {
-                effectName = Object.keys(max)[i]
-
-                if (max[effectName] > 0) {
-                    pct[effectName] = (100 * (max[effectName] + score[effectName]) / (2 * max[effectName])).toFixed(1);
-                } else {
-                    pct[effectName] = 0
-                }
-            }
-
-            return pct;
-        }
-    </script>
-
+    <button class="small-button" id="back-button" onmouseover="this.style.backgroundColor = '#bababa';" onmouseout="this.style.backgroundColor = '#333';">Назад</button>
+    <button class="small-button-off" id="back-button-off">Назад</button><br>
 </body>
+<script type="module" src="js/quiz.js"></script>

@@ -47,7 +47,7 @@
     <p>
         BulgarianValues е тест за определяне на политическа идеология, който съдържа въпроси, свързани с политическата обстановка в България. Тестът е базиран на <a href="https://sapplyvalues.github.io/">SapplyValues</a>, <a href="https://8values.github.io/">8values</a> и <a href="https://infvalues.github.io/">InfValues</a>. Ще получите въпроси, като ще отговорите според вашето мнение. Отговора може да варира от <b>Екстремно съгласен</b> до <b>Екстремно несъгласен</b>, като всеки отговор влияе на резултата ви. В края на теста, резултатите ви ще бъдат представени върху оси.<br />
         </br>
-        Теста съдържа <b><u><span id="questionCount"></span></u></b> въпроса.
+        Теста съдържа <b><u><span id="questions-count"></span></u></b> въпроса.
     </p>
     <h2>Колко оси има?</h2>
     <p>Теста съдържа 37 оси, всяка с по 8 стойности (Умерени, Нормални и Екстремни).</p>
@@ -63,52 +63,6 @@
             <p id="license-content">Some text in the Modal..</p>
         </div>
     </div>
-
-    <script>
-        var modal = document.getElementById("license");
-        var link = document.getElementById("openModal");
-        var span = document.getElementsByClassName("close")[0];
-
-        function ReadTxt(pathOfFileToReadFrom) {
-            var request = new XMLHttpRequest();
-            request.open("GET", pathOfFileToReadFrom, false);
-            request.send(null);
-            var returnValue = request.responseText;
-
-            return returnValue;
-        }
-        document.getElementById("license-content").innerHTML = ReadTxt("LICENSE.txt");
-
-        link.onclick = function () {
-            modal.style.display = "block";
-        }
-        span.onclick = function () {
-            modal.style.display = "none";
-        }
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    </script>
-    <script type="application/javascript" src="js/questions.js"></script>
-    <script type="text/javascript">
-        document.getElementById("questionCount").innerHTML = questions.length;
-
-        window.onload = function () {
-            var background = new Image();
-            background.onload = function () {
-                var c = document.createElement("canvas");
-                c.width = 1850;
-                c.height = 1300;
-                var ctx = c.getContext("2d");
-                ctx.fillStyle = "#EEEEEE"
-                ctx.fillRect(0, 0, 1850, 1300);
-                ctx.drawImage(background, 0, 0);
-
-                document.getElementById("banner").src = c.toDataURL();
-            }
-            background.src = "./compass.png";
-        }
-    </script>
 </body>
+<script type="application/javascript" src="js/data/questions.js"></script>
+<script src="js/script.js"></script>

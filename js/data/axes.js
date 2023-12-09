@@ -1,4 +1,4 @@
-axes = [
+export let axes = [
     {
         "id": 0,
         "shortenedName": "economy",

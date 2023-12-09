@@ -1,4 +1,4 @@
-questions = [
+export let questions = [
     {
         "id": 0,
         "question": "Капитализмът е най-успешната икономическа система досега.",
